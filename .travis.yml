@@ -7,7 +7,7 @@ script:
   - docker images mannydesigns/node-test
 
 before_deploy:
-  - docker login -u mannydesigns  -p vVc9xAvUZK81whlk
+  - docker login -u <username>  -p <userpassword>
 
 deploy:
   provider: script
