@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t manny/node-test .
+  - docker images manny/node-test
+
+before_deploy:
+  - docker login -u mannydesigns  -p vVc9xAvUZK81whlk
+
+deploy:
+  provider: script
+  script: docker push manny/node-test
+  on:
+    branch: master
