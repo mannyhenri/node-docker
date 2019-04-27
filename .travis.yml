@@ -3,14 +3,14 @@ services:
   - docker
 
 script:
-  - docker build -t manny/node-test .
-  - docker images manny/node-test
+  - docker build -t mannydesigns/node-test .
+  - docker images mannydesigns/node-test
 
 before_deploy:
   - docker login -u mannydesigns  -p vVc9xAvUZK81whlk
 
 deploy:
   provider: script
-  script: docker push manny/node-test
+  script: docker push mannydesigns/node-test
   on:
     branch: master
